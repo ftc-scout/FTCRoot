@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+# ruby '2.3.1'
+ruby '2.4.10' # 2.3.x was not working on my macOS machine.  2.4.x seems to work fine.
+# gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.1.0' # https://stackoverflow.com/a/46581314
+gem 'nokogiri', '~> 1.8.5'
+gem 'loofah', '~>2.19.1' # https://www.ruby-forum.com/t/i-am-using-ruby-version-2-3-8-and-rails-version-5-2-6-to-develop-my-application-since-yesterday-i-am-getting-the-error-i-tried-to-find-the-occurrence-of-this-nokogiri-html4-in-my-application-but-i-didnt-find-any-of-the-occurrence-like-this/263852/4
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -20,9 +24,11 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'bootstrap', '~> 4.0.0.alpha3.1'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+# gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '= 4.0.0.alpha6' # FIXME: Anything later, and the styling breaks.
 gem 'high_voltage'
-gem 'mysql2', '~> 0.3.18'
+# gem 'mysql2', '~> 0.3.18'
+gem 'mysql2', '~> 0.4.10' # 0.3.x does not compile on my macOS machine.  0.4.x seems to work fine
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

@@ -1,34 +1,20 @@
 # How to setup this stuff
 
-I'm assuming that you are running OSX or Linux with ruby installed, caz installing ruby is a pain on Windows.
-
-If you don't have Ruby, install homebrew and install ruby. (Google that)
-
-
+I'm assuming that you are running macOS or Linux with Ruby installed, because installing Ruby is a pain on Windows.  If you don't have Ruby, install Homebrew (https://brew.sh) and install Ruby. (Google that)
 
 ## First time
 
-First Clone this repo
-
-Then cd to this directory
-
-Ensure a local MYSQL server is running
-
-Edit the config/database.yml to the correct database username/password
-
-Setup tables with ``` rails db:create db:migrate```
-
+1. Clone this repo
+2. `cd` to the repo
+3. Ensure a local MYSQL server is running
+4. Edit [/config/database.yml](/config/database.yml) to the correct database username/password
+5. Setup tables with ```rails db:create db:schema:load```
 
 ## Updating everything to the latest stuff
 
-And then type ```bundle install``` to install the gems
-
-To load teams, events, and other stuff run ```rails init:M init:N init:O init:T```
-
-This will take some time!
-
-
+6. Type ```bundle install``` to install the gems
+7. To load teams, events, and other stuff, run ```rails init:load init:T init:M init:N init:O```.  This will take some time!  Note that the order of these commands matters; if the order is wrong, some data may not show up right (e.g. matches now showing on a team's page).
 
 ## To Run the Server
 
-``` rails s ``` and the url to go to is ``` localhost:3000 ```
+Run ```rails s```.  The URL to go to is: http://localhost:3000
