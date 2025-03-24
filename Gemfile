@@ -6,9 +6,9 @@ gem 'rails', '~> 5.1.7' # https://stackoverflow.com/a/46581314
 gem 'nokogiri', '~> 1.15.7' # For ruby 2.7.8
 gem 'loofah', '~>2.19.1' # https://www.ruby-forum.com/t/i-am-using-ruby-version-2-3-8-and-rails-version-5-2-6-to-develop-my-application-since-yesterday-i-am-getting-the-error-i-tried-to-find-the-occurrence-of-this-nokogiri-html4-in-my-application-but-i-didnt-find-any-of-the-occurrence-like-this/263852/4
 gem 'puma', '~> 6.6.0'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2' # FIXME: Seems to only used for `google_analytics.js.coffee`, which shoudl probably be removed, as we have no need for GA
+gem 'coffee-rails', '~> 4.2' # FIXME: Seems to only used for `google_analytics.js.coffee`, which should probably be removed, as we have no need for GA
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.2.1'
 gem 'jbuilder', '~> 2.13.0'
