@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-# ruby '2.4.10' # 2.3.x was not working on my macOS machine.  2.4.x seems to work fine.
 ruby '2.7.8'
 gem 'rails', '~> 5.2.8.1'
 gem 'nokogiri', '~> 1.15.7' # For ruby 2.7.8
@@ -7,7 +6,6 @@ gem 'loofah', '~>2.19.1' # https://www.ruby-forum.com/t/i-am-using-ruby-version-
 gem 'puma', '~> 6.6.0'
 gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2' # FIXME: Seems to only used for `google_analytics.js.coffee`, which should probably be removed, as we have no need for GA
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.2.1'
 gem 'jbuilder', '~> 2.13.0'
