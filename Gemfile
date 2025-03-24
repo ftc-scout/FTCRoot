@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 # ruby '2.4.10' # 2.3.x was not working on my macOS machine.  2.4.x seems to work fine.
 ruby '2.7.8'
-gem 'rails', '~> 5.1.7' # https://stackoverflow.com/a/46581314
-# gem 'rails', '~> 5.2.8.1' # https://stackoverflow.com/questions/50917362/undefined-method-halt-callback-chains-on-return-false, but this breaks things for some reason
+gem 'rails', '~> 5.2.8.1'
 gem 'nokogiri', '~> 1.15.7' # For ruby 2.7.8
 gem 'loofah', '~>2.19.1' # https://www.ruby-forum.com/t/i-am-using-ruby-version-2-3-8-and-rails-version-5-2-6-to-develop-my-application-since-yesterday-i-am-getting-the-error-i-tried-to-find-the-occurrence-of-this-nokogiri-html4-in-my-application-but-i-didnt-find-any-of-the-occurrence-like-this/263852/4
 gem 'puma', '~> 6.6.0'
