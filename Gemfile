@@ -6,7 +6,6 @@ gem 'loofah', '~>2.19.1' # https://www.ruby-forum.com/t/i-am-using-ruby-version-
 gem 'puma', '~> 6.6.0'
 gem 'sass-rails', '~> 6.0'
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5.2.1'
 gem 'jbuilder', '~> 2.13.0'
 group :development, :test do
   gem 'byebug', platform: :mri
