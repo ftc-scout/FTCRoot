@@ -1,6 +1,6 @@
 <% content_for :title do %>FTC Team Map Search<% end %>
 
-<div id="container">
+<div id="container" class="d-none d-sm-block">
     <center>
         <div id="data-container">
             <h1>
@@ -36,18 +36,11 @@
     var markers = [];
     var realIndex = 0;
     var didinit = false;
-    $("#navigaaa").hide();
     $(document).on('turbolinks:load', function () {
 
         if (!didinit) {
             initialize();
             didinit = true;
-        }
-        if (mobilecheck()) {
-            $("#container").hide();
-            $("#navigaaa").show();
-            $("#navigaa").hide();
-            console.log("HI");
         }
 
     });

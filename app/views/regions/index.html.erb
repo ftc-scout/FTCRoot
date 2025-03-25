@@ -28,7 +28,7 @@
 
 $(document).on('turbolinks:load', function () {
 var surpress = false;
-if (!mobilecheck() <%= "&& false".html_safe if @search %>) {
+if (!mobilecheck() <%= "&& false".html_safe if @search %>) { // FIXME: mobilecheck is very janky, use something else?
     $("#regionlist").hide();
     $("#maplist").show();
     $('#statemap').usmap({

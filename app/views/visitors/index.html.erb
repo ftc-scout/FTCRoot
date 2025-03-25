@@ -1,4 +1,4 @@
-<table id="navigaa">
+<table id="navigaa" class="d-none d-sm-table">
     <tr>
         <td>
             <h3><%= link_to("Teams Search",teams_path, class: 'pure-hover pure-button pure-button-primary nav-link full-width') %>
@@ -18,7 +18,7 @@
         </td>
     </tr>
 </table>
-<ul id="navigaaa">
+<ul id="navigaaa" class="d-block d-sm-none">
     <li><%= link_to("Teams Search",teams_path, class: 'pure-hover pure-button pure-button-primary nav-link') %></li>
     <li><%= link_to("Event Search",events_path, class: 'pure-hover pure-button button-primary nav-link') %></li>
     <li><%= link_to("Region Search",regions_path, class: 'pure-hover pure-button button-red nav-link') %></li>
@@ -64,7 +64,7 @@
 </div>
 <br/>
 
-<div id="container">
+<div id="container" class="d-none d-sm-block">
     <center>
         <div id="data-container">
             <h1>
@@ -99,18 +99,11 @@
     var markers = [];
     var realIndex = 0;
     var didinit = false;
-    $("#navigaaa").hide();
     $(document).on('turbolinks:load', function () {
 
         if (!didinit) {
             initialize();
             didinit = true;
-        }
-        if (mobilecheck()) {
-            $("#container").hide();
-            $("#navigaaa").show();
-            $("#navigaa").hide();
-            console.log("HI");
         }
 
     });
