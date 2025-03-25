@@ -46,9 +46,9 @@ class RegionsController < ApplicationController
       @meets = @region.events.all
       @meets = @meets.where("advanceddata is not null")
       if(ActiveRecord::Base.connection.adapter_name == 'Mysql2' )
-          @meets = @meets.order( 'STR_TO_DATE(date, "%m/%d/%Y") DESC, name ASC' ).paginate(:page => params[:page], :per_page => 15)
+          @meets = @meets.order(Arel.sql( 'STR_TO_DATE(date, "%m/%d/%Y") DESC, name ASC' )).paginate(:page => params[:page], :per_page => 15)
       else
-          @meets = @meets.order( 'to_date(date,\'MM/DD/YYYY\') DESC, name ASC' ).paginate(:page => params[:page], :per_page => 15)
+          @meets = @meets.order(Arel.sql( 'to_date(date,\'MM/DD/YYYY\') DESC, name ASC' )).paginate(:page => params[:page], :per_page => 15)
       end
 
       if @region.name
