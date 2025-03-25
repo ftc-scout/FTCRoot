@@ -21,6 +21,8 @@ RUN rails db:create db:schema:load
 
 RUN rails init:load init:T init:M init:N init:O
 
+RUN rails assets:precompile
+
 # Start the main process.
 CMD ["rails", "s"]
 
