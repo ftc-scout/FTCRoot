@@ -28,17 +28,17 @@
 </div>
 <table class="pure-table centered">
     <thead>
-        <tr class="hidden-xs-down">
+        <tr class="d-none d-sm-table-row">
             <th style="text-align:left;">Name</th>
             <th class="td-meh">Status</th>
             <th>Teamid</th>
             <th>Location</th>
         </tr>
-        <tr class="hidden-sm-up">
+        <tr class="d-sm-none">
             <th>Name</th>
             <th>Teamid</th>
         </tr>
-        <tr class="hidden-sm-up">
+        <tr class="d-sm-none">
             <th>Location</th>
             <th>Status</th>
         </tr>
@@ -46,18 +46,18 @@
 
     <tbody>
         <% @teams.each do |team| %>
-        <tr class="hidden-xs-down">
+        <tr class="d-none d-sm-table-row">
             <td style="text-align:left;"><%= link_to team.name, team %></td>
             <td><%= "<i class='fa fa-circle d-green'></i>".html_safe if team.blurb != nil %>
                 <%= "<i class='fa fa-circle d-red'></i>".html_safe if team.contact_email != nil %></td>
             <td><%= team.id %></td>
             <td><%= "#{team.location.split(", ")[0]}, #{team.location.split(" ")[-3]}" %></td>
         </tr>
-        <tr class="hidden-sm-up">
+        <tr class="d-sm-none">
             <td style="font-size:100% !important;"><%= link_to team.name, team %></td>
             <td><%= team.id %></td>
         </tr>
-        <tr class="hidden-sm-up">
+        <tr class="d-sm-none">
             <td><%= team.location.split(" ")[0..1].join(" ") %></td>
             <td><%= "<i class='fa fa-circle d-green'></i>".html_safe if team.blurb != nil %>
                 <%= "<i class='fa fa-circle d-red'></i>".html_safe if team.contact_email != nil %></td>

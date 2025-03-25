@@ -40,7 +40,7 @@ FTC Results)<%end %>
     <% if @event_stats.length > 0 %>
     <table class="pure-table pure-table-horizontal centered">
         <thead>
-            <tr class="<%= "hidden-xs-down" if @enableTitles %>">
+            <tr class="<%= "d-none d-sm-table-row" if @enableTitles %>">
                 <th>Rank</th>
                 <th>Team</th>
                 <th>QP</th>
@@ -52,14 +52,14 @@ FTC Results)<%end %>
             </tr>
 
             <% if @enableTitles %>
-            <tr class="hidden-sm-up">
+            <tr class="d-sm-none">
                 <th rowspan="2">Rank</th>
                 <th>Team</th>
                 <th>QP</th>
                 <th>RP</th>
                 <th>Highest</th>
             </tr>
-            <tr class="hidden-sm-up">
+            <tr class="d-sm-none">
                 <th colspan="4">Playoffs</th>
             </tr>
             <% end %>
@@ -74,7 +74,7 @@ FTC Results)<%end %>
             else
                 color = "none"
             end %>
-        <tr style="border-right: 3px solid <%= color %> !important;border-left: 3px solid <%= color %> !important;" class="<%= "hidden-xs-down" if @enableTitles %>">
+        <tr style="border-right: 3px solid <%= color %> !important;border-left: 3px solid <%= color %> !important;" class="<%= "d-none d-sm-table-row" if @enableTitles %>">
             <td>
                 <%= team[:rank] %>
                 <%#= team[:elim] %>
@@ -105,7 +105,7 @@ FTC Results)<%end %>
             <% end %>
         </tr>
         <% if @enableTitles %>
-            <tr style="border-right: 3px solid <%= color %> !important;border-left: 3px solid <%= color %> !important;" class="hidden-sm-up">
+            <tr style="border-right: 3px solid <%= color %> !important;border-left: 3px solid <%= color %> !important;" class="d-sm-none">
                 <td rowspan="2">
                     <%= team[:rank] %>
                 </td>
@@ -123,7 +123,7 @@ FTC Results)<%end %>
                 <td><%= team[:rp] %></td>
                 <td><%= team[:high] %></td>
             </tr>
-            <tr style="border-bottom: 2px solid black;border-right: 3px solid <%= color %> !important;border-left: 3px solid <%= color %> !important;" class="hidden-sm-up">
+            <tr style="border-bottom: 2px solid black;border-right: 3px solid <%= color %> !important;border-left: 3px solid <%= color %> !important;" class="d-sm-none">
             <td colspan="4">
                 <%= "Winning" if team[:elim][0] == "W" %>
                 <%= "Finalist" if team[:elim][0] == "F" %>
@@ -148,7 +148,7 @@ FTC Results)<%end %>
         <!-- <div class="overflow"> -->
             <table class="pure-table pure-table-horizontal centered">
                 <thead>
-                    <tr class="hidden-xs-down">
+                    <tr class="d-none d-sm-table-row">
                         <th colspan="3">Match Number</th>
                         <th colspan="6">Red Team</th>
                         <center>
@@ -158,19 +158,19 @@ FTC Results)<%end %>
                         </center>
                         <th colspan="6">Blue Team</th>
                     </tr>
-                    <tr class="hidden-sm-up">
+                    <tr class="d-sm-none">
                         <th colspan="3" rowspan="2">Match Number</th>
                         <th colspan="6">Red Team</th>
                         <th colspan="3">Score</th>
                     </tr>
-                    <tr class="hidden-sm-up">
+                    <tr class="d-sm-none">
                         <th colspan="6">Blue Team</th>
                         <th colspan="3">Score</th>
                     </tr>
                 </thead>
                 <% @event_events.each do |event| %>
                 <!-- FOR BIG SCREEN -->
-                <tr class="hidden-xs-down">
+                <tr class="d-none d-sm-table-row">
                     <td colspan="3"><%= event[:name] %></td>
                     <% event[:redteam].each do |team| %>
                         <td colspan="<%= event[:numteams] %>" class="teamred">
@@ -218,7 +218,7 @@ FTC Results)<%end %>
                     <% end %>
                 </tr>
                 <!-- FOR LITTLE SCREEN -->
-                <tr class="hidden-sm-up" style="border-top:2px solid black;">
+                <tr class="d-sm-none" style="border-top:2px solid black;">
                     <td colspan="3" rowspan="2"  class="<%= "teamred" if event[:redscore].to_i > event[:bluescore].to_i %> <%= "teamblue" if event[:redscore].to_i < event[:bluescore].to_i %>"><%= event[:name] %></td>
                     <% event[:redteam].each do |team| %>
                         <td colspan="<%= event[:numteams] %>" class="teamred">
@@ -237,7 +237,7 @@ FTC Results)<%end %>
                         <td colspan="3"><%= event[:redscore] %></td>
                     <% end %>
                 </tr>
-                <tr class="hidden-sm-up">
+                <tr class="d-sm-none">
                     <% event[:blueteam].each  do |team| %>
                     <td colspan="<%= event[:numteams] %>" class="teamblue">
                         <% if Team.exists?(team) %>

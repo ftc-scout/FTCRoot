@@ -19,7 +19,7 @@
 <center>
     <table class="pure-table pure-table-horizontal centered">
         <thead>
-            <tr class="hidden-xs-down">
+            <tr class="d-none d-sm-table-row">
                 <th>Rank</th>
                 <th colspan="3" class="td-superimportant">Match</th>
                 <th colspan="6">Team</th>
@@ -27,11 +27,11 @@
                     <th colspan="3">Score</th>
                 </center>
             </tr>
-            <tr class="hidden-sm-up">
+            <tr class="d-sm-none">
                 <th>Rank</th>
                 <th colspan="8">Match</th>
             </tr>
-            <tr class="hidden-sm-up">
+            <tr class="d-sm-none">
                 <th colspan="6">Team</th>
                 <center>
                     <th colspan="3">Score</th>
@@ -39,7 +39,7 @@
             </tr>
         </thead>
         <% @allScores.each_with_index do |event,ind| %>
-        <tr style="border-top:2px solid gray;" class="hidden-xs-down">
+        <tr style="border-top:2px solid gray;" class="d-none d-sm-table-row">
             <td><%= ind + 1 %></td>
             <td colspan="3"><%= link_to("#{event[:event].name} (#{event[:event].region.name})",event[:event]) %> - <%= event[:name] %>
             <br/>
@@ -63,14 +63,14 @@
             <% end %>
         </tr>
 
-        <tr style="border-top:2px solid gray;" class="hidden-sm-up">
+        <tr style="border-top:2px solid gray;" class="d-sm-none">
             <td><%= ind + 1 %></td>
             <td colspan="8"><%= link_to("#{event[:event].name} (#{event[:event].region.name})",event[:event]) %> - <%= event[:name] %>
             <br/>
             <%= event[:event].date %>
             </td>
         </tr>
-        <tr class="hidden-sm-up">
+        <tr class="d-sm-none">
             <% (event[:ownteam]).each do |team| %>
                 <td class="team<%= event[:owncolor] %>" colspan="<%= event[:numteams] %>" >
                     <% if Team.exists?(team) %>

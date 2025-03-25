@@ -20,7 +20,7 @@ group :development do
   gem 'binding_of_caller'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '= 4.0.0.alpha6' # FIXME: Anything later, and the styling breaks.
+gem 'bootstrap', '~> 4.6.2.1'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.5.6'
 group :development do
