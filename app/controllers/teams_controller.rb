@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
                     end
                 else
                     # Team.where("blurb is not null").or Team.where("blurb is null")
-                    Team.all.order("blurb is null, id asc")
+                    Team.all.order(Arel.sql("blurb is null, id asc"))
                 end
 
         @teams = @teams.paginate(:page => params[:page], :per_page => 30)
