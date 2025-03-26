@@ -1,7 +1,7 @@
 # How to docker
 
 ## Database Setup
-Set up a MySQL DB with `sudo docker run --name ftcroot-mysql -v ~/.docker/ftcroot-mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=sa -e MYSQL_DATABASE=ftcroot -p 3306:3306 -d mysql:5.7`
+Set up a MySQL DB with `sudo docker run --name ftcroot-mysql -v ~/.docker/ftcroot-mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=sa -e MYSQL_DATABASE=ftcroot -p 3306:3306 -d mysql:5.7 --skip-performance-schema --skip-mysqlx`
 
 Then, grab the IP used by the container with `sudo docker inspect ftcroot-mysql | grep IPAddress`.  Use this IP in the `config/database.yml` file, under "host".
 
