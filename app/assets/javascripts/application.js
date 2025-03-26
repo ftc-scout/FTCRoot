@@ -13,7 +13,6 @@
 //= require jquery
 //= require markerclusterer
 //= require jquery_ujs
-//= require tether
 //= require bootstrap-sprockets
 //= require popupoverlay
 //= require Chart.bundle

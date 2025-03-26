@@ -28,7 +28,6 @@ end
 
 gem 'markerclustererplus-rails'
 gem 'gon'
-gem 'tether-rails'
 gem 'json'
 gem 'meta-tags'
 gem 'pg'
@@ -44,7 +43,3 @@ gem "chartkick"
 gem 'social-share-button'
 
 gem 'rails_12factor', group: :production
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
