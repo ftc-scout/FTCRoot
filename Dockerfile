@@ -5,17 +5,22 @@ EXPOSE 3000
 
 WORKDIR /app
 
+RUN apt-get update -qq && apt-get install -y nodejs
+
+RUN gem install bundler -v 2.4.22
+
 COPY . .
 
 # Remove below 2 lines for development mode
 ENV RAILS_ENV=production
 ENV SECRET_KEY_BASE=your_secret_key_base_here
 
-RUN gem install bundler -v 2.4.22
+ENV DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 RUN bundle install
 
-RUN apt-get update -qq && apt-get install -y nodejs
+ARG DATABASE_PASSWORD
+ENV FTCROOT_DATABASE_PASSWORD=$DATABASE_PASSWORD
 
 RUN rails db:create db:schema:load
 
