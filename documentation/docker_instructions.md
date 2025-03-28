@@ -23,8 +23,4 @@ Then, run `sudo docker run --name ftcroot -p 3000:3000 -d ftcscout/ftcroot` to s
 ## Deploying to development
 
 You do not need a secret key base for development.
-Remove the "ENV=production" line from the Dockerfile.
-
-To deploy the app, run `sudo docker build -t ftcscout/ftcroot .` in the root directory of the app. This will take about 5 minutes.
-
-Then, run `sudo docker run --name ftcroot -p 3000:3000 -d ftcscout/ftcroot` to start the app.  You can then access the app at `localhost:3000`.
+Remove the `ENV RAILS_ENV=production` and `ENV SECRET_KEY_BASE=` lines from the Dockerfile.  All other steps are the same.
